@@ -29,9 +29,9 @@ cmd({
 
             // Format the repository information in new stylish format
             const formattedInfo = `
-*┏────〘 *NYX* 〙───⊷*
+*┏────〘 *KING JAY MD* 〙───⊷*
 *┃* *📌 Repository Name:* ${repoData.name}
-*┃* *👑 Owner:* BLAZE TEAM
+*┃* *👑 Owner:* JAY JAY
 *┃* *⭐ Stars:* ${repoData.stargazers_count}
 *┃* *⑂ Forks:* ${repoData.forks_count}
 *┃* *📝 Description:* ${repoData.description || '*World Best WhatsApp Bot powered by NYX MD*'}
@@ -41,7 +41,8 @@ cmd({
 
             // Send an image with the formatted info as a caption
             await conn.sendMessage(from, {
-                image: { url: `https://files.catbox.moe/rw0yfd.png` },
+                image: {
+                    url: `https://files.catbox.moe/pwublt.png },
                 caption: formattedInfo,
                 contextInfo: {
                     mentionedJid: [m.sender],
