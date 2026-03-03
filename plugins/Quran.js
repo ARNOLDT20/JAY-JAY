@@ -444,7 +444,7 @@ cmd({
       await conn.sendMessage(
         from,
         {
-          image: { url: `https://files.catbox.moe/pwublt.png` },
+          image: { url: `https://files.catbox.moe/n1ap5e.jpg` },
           caption: dec,
           contextInfo: {
             mentionedJid: [m.sender],

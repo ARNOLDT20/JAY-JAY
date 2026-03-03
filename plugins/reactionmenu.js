@@ -28,7 +28,7 @@ cmd({
             sections: [{ title: "Reaction Commands", rows: reactRows }],
             headerType: 1,
             contextInfo: { mentionedJid: [sender] },
-            image: { url: "https://files.catbox.moe/pwublt.png" }
+            image: { url: "https://files.catbox.moe/n1ap5e.jpg" }
         };
 
         await conn.sendMessage(from, listMessage, { quoted: mek });

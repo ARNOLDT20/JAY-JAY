@@ -20,7 +20,7 @@ module.exports = {
     // make anti link true,false for groups
     MENTION_REPLY: process.env.MENTION_REPLY || "true",
     // make true if want auto voice reply if someone menetion you
-    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/pwublt.png",
+    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/n1ap5e.jpg",
     // add custom menu and mention reply image url
     PREFIX: process.env.PREFIX || ".",
     // add your prifix for bot
@@ -41,7 +41,7 @@ module.exports = {
     // add bot owner name
     DESCRIPTION: process.env.DESCRIPTION || "© JAY-JAY MD bot",
     // add bot owner name
-    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/pwublt.png",
+    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/n1ap5e.jpg",
     // add img for alive msg
     LIVE_MSG: process.env.LIVE_MSG || ">JAY-JAY MD IS ALIVE😍",
     // add alive msg here
