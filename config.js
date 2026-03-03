@@ -4,10 +4,9 @@ if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env'
 function convertToBool(text, fault = 'true') {
     return text === fault ? true : false;
 }
-
 module.exports = {
-    SESSION_ID: process.env.SESSION_ID || "",
-    // add your Session Id (leave empty to generate on first run)
+    SESSION_ID: process.env.SESSION_ID || "nyx-session",
+    // add your Session Id
     AUTO_STATUS_SEEN: process.env.AUTO_STATUS_SEEN || "true",
     // make true or false status auto seen
     AUTO_STATUS_REPLY: process.env.AUTO_STATUS_REPLY || "false",
@@ -21,13 +20,13 @@ module.exports = {
     // make anti link true,false for groups
     MENTION_REPLY: process.env.MENTION_REPLY || "true",
     // make true if want auto voice reply if someone menetion you
-    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/pwublt.png",
+    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/rw0yfd.png",
     // add custom menu and mention reply image url
     PREFIX: process.env.PREFIX || ".",
     // add your prifix for bot
-    BOT_NAME: process.env.BOT_NAME || "JAY-JAY MD",
+    BOT_NAME: process.env.BOT_NAME || "NYX MD",
     // add bot namw here for menu
-    STICKER_NAME: process.env.STICKER_NAME || "JAY-JAY MD",
+    STICKER_NAME: process.env.STICKER_NAME || "NYX-MD",
     // type sticker pack name
     CUSTOM_REACT: process.env.CUSTOM_REACT || "false",
     // make this true for custum emoji react
@@ -35,24 +34,24 @@ module.exports = {
     // chose custom react emojis by yourself
     DELETE_LINKS: process.env.DELETE_LINKS || "false",
     // automatic delete links witho remove member
-    OWNER_NUMBER: process.env.OWNER_NUMBER || "",
-    // add your bot owner number (required for connection)
-    OWNER_NAME: process.env.OWNER_NAME || "JAY JAY",
+    OWNER_NUMBER: process.env.OWNER_NUMBER || "255627417402",
+    // add your bot owner number
+    // add your bot owner number
+    OWNER_NAME: process.env.OWNER_NAME || "BLAZE TEAM",
     // add bot owner name
-    DESCRIPTION: process.env.DESCRIPTION || "© JAY-JAY MD bot",
+    DESCRIPTION: process.env.DESCRIPTION || "© NYX MD bot",
     // add bot owner name
-    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/pwublt.png",
+    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/rw0yfd.png",
     // add img for alive msg
-    LIVE_MSG: process.env.LIVE_MSG || ">JAY-JAY MD IS ALIVE😍",
+    LIVE_MSG: process.env.LIVE_MSG || ">NYX MD IS ALIVE😍",
     // add alive msg here
     // Newsletter and links
-    NEWSLETTER_JID: process.env.NEWSLETTER_JID || '120363421014261315@newsletter',
+    NEWSLETTER_JID: process.env.NEWSLETTER_JID || '120363424512102809@newsletter',
     CHANNEL_LINK: process.env.CHANNEL_LINK || 'https://whatsapp.com/channel/0029VbC49Bb2P59togOaEF2E',
-    CHANNEL_JID: process.env.CHANNEL_JID || '120363421014261315@newsletter',
     GROUP_LINK: process.env.GROUP_LINK || 'https://chat.whatsapp.com/IrmNcI7Wn0C4bdLC70xVPJ',
     DEFAULT_GROUP_JID: process.env.DEFAULT_GROUP_JID || '120363406591837257@g.us',
     // secondary owner (used by .owner and internal checks)
-    OWNER_NUMBER2: process.env.OWNER_NUMBER2 || "",
+    OWNER_NUMBER2: process.env.OWNER_NUMBER2 || "255754206718",
     READ_MESSAGE: process.env.READ_MESSAGE || "false",
     // Turn true or false for automatic read msgs
     AUTO_REACT: process.env.AUTO_REACT || "false",
@@ -77,22 +76,12 @@ module.exports = {
     // true for automatic show typing
     READ_CMD: process.env.READ_CMD || "false",
     // true if want mark commands as read
-    DEV: process.env.DEV || "",
-    //replace with your whatsapp number (optional)
+    DEV: process.env.DEV || "255627417402",
+    //replace with your whatsapp number
     ANTI_VV: process.env.ANTI_VV || "true",
     // true for anti once view
     ANTI_DEL_PATH: process.env.ANTI_DEL_PATH || "log",
     // change it to 'same' if you want to resend deleted message in same chat
-    AUTO_RECORDING: process.env.AUTO_RECORDING || "true",
+    AUTO_RECORDING: process.env.AUTO_RECORDING || "true"
     // make it true for auto recoding
-    WELCOME: process.env.WELCOME || "true",
-    // make true for welcome messages on group member add
-    GOODBYE: process.env.GOODBYE || "true",
-    // make true for goodbye messages on group member remove
-    HEROKU_API_KEY: process.env.HEROKU_API_KEY || "",
-    // Your Heroku API key for automatic redeploy
-    HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || "",
-    // Your Heroku app name for automatic redeploy
-    BAILEYS: process.env.BAILEYS || "@whiskeysockets/baileys",
-    // Baileys library reference
 };

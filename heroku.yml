@@ -1,6 +1,5 @@
 build:
-  languages:
-    - node_modules
+  docker:
+      worker: DockerFile
 run:
-  web: node start.js
-
+   worker: npm install -g pm2 && npm start

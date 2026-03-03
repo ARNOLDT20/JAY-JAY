@@ -1,32 +1,16 @@
-FROM node:20-buster
+FROM node:lts-buster
 
-# Install ffmpeg and other system dependencies
-RUN apt-get update && apt-get install -y \
-    ffmpeg \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+# Clone bot from GitHub
+RUN git clone https://github.com/blazetech-glitch/NYX.git /root/nyx-bot
 
 # Set working directory
-WORKDIR /app
+WORKDIR /root/nyx-bot
 
-# Copy package files
-COPY package*.json ./
+# Install dependencies
+RUN npm install && npm install -g pm2
 
-# Install Node dependencies
-RUN npm install --production
+# Expose port
+EXPOSE 9090
 
-# Copy application files
-COPY . .
-
-# Create sessions directory
-RUN mkdir -p sessions
-
-# Expose port for Express server
-EXPOSE 2050
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:2050/ || exit 1
-
-# Start the bot with error handling
-CMD ["node", "start.js"]
+# Start the bot
+CMD ["npm", "start"]
