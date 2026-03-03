@@ -2,7 +2,11 @@ const config = require('../config');
 const moment = require('moment-timezone');
 const { cmd, commands } = require('../command');
 const { getPrefix } = require('../lib/prefix');
+const axios = require("axios");
 
+process.on('unhandledRejection', console.error);
+
+// Stylized uppercase
 function toUpperStylized(str) {
   const stylized = {
     A: 'ᴀ', B: 'ʙ', C: 'ᴄ', D: 'ᴅ', E: 'ᴇ', F: 'ғ', G: 'ɢ', H: 'ʜ',
@@ -50,7 +54,6 @@ cmd({
       return `${h}h ${m}m ${s}s`;
     };
 
-    // 👑 ROYAL HEADER
     let menu = `
 ╔═══════════════════════════════╗
 ║        👑  KING JAY MD  👑        ║
@@ -78,7 +81,6 @@ cmd({
       }
     }
 
-    // 👑 ROYAL CATEGORY STYLE
     for (const cat of Object.keys(categories).sort()) {
       const emoji = emojiByCategory[cat] || '✨';
 
@@ -94,7 +96,6 @@ cmd({
 `;
     }
 
-    // 👑 FOOTER
     menu += `
 ╔═══════════════════════════════╗
 ║  🌟 ${config.DESCRIPTION || 'Power • Speed • Perfection'} 🌟  ║
@@ -102,31 +103,28 @@ cmd({
 ╚═══════════════════════════════╝
 `;
 
-    // Prevent caption overflow
+    // Limit caption safely
     const MAX_CAPTION = 3900;
     if (menu.length > MAX_CAPTION) {
       menu = menu.slice(0, MAX_CAPTION) + "\n\n⚜️ Menu trimmed due to length...";
     }
 
-    const contextInfo = {
-      mentionedJid: [sender],
-      forwardingScore: 999,
-      isForwarded: true
-    };
+    // Download image as buffer (FIX FOR BAILEYS)
+    const imageBuffer = await axios
+      .get("https://files.catbox.moe/pwublt.png", { responseType: "arraybuffer" })
+      .then(res => res.data);
 
-    // 👑 ALWAYS SEND WITH IMAGE
     await conn.sendMessage(
       from,
       {
-        image: { url: "https://files.catbox.moe/pwublt.png" },
-        caption: menu,
-        contextInfo: contextInfo
+        image: imageBuffer,
+        caption: menu
       },
       { quoted: mek }
     );
 
-  } catch (e) {
-    console.log(e);
-    reply("❌ Error displaying menu.");
+  } catch (error) {
+    console.log("MENU ERROR:", error);
+    reply("❌ Menu failed to send.\n" + error.message);
   }
 });
