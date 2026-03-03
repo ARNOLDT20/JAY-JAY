@@ -392,7 +392,7 @@ async function connectToWA() {
         const isAdmins = isGroup ? groupAdmins.includes(sender) : false
         const isReact = m.message.reactionMessage ? true : false
         const reply = (teks) => {
-            conn.sendMessage(from, { text: teks }, { quoted: mek })
+            return conn.sendMessage(from, { text: teks }, { quoted: mek })
         }
         const udp = botNumber.split('@')[0];
         const jawad = ('255627417402');
