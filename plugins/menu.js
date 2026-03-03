@@ -56,7 +56,7 @@ cmd({
 
     // 🌟 BEAUTIFUL HEADER WITH COLORS
     let menu = `╔════════════════════════════════╗
-║        ✨ *NYX MD* ✨       ║
+║        ✨ *KING JAY MD* ✨       ║
 ║    🤖 Command Menu v3.0.0 🤖   ║
 ╚════════════════════════════════╝
 
@@ -110,7 +110,7 @@ cmd({
     };
 
     // Send menu (handle large captions)
-    const sendTextChunks = async (text, opts={}) => {
+    const sendTextChunks = async (text, opts = {}) => {
       const maxLen = 3900; // keep some buffer
       if (text.length <= maxLen) {
         return conn.sendMessage(from, { text }, opts);
