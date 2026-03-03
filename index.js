@@ -93,13 +93,24 @@ setInterval(clearTempDir, 5 * 60 * 1000);
 
 //===================SESSION-AUTH============================
 if (!fs.existsSync(__dirname + '/sessions/creds.json')) {
-  if (!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
+  if (!config.SESSION_ID || config.SESSION_ID === 'nyx-session') {
+    console.log('❌ ERROR: Please add your SESSION_ID to the .env file!!')
+    console.log('You can generate one by running the bot locally first, then paste the generated SESSION_ID.')
+    process.exit(1)
+  }
   const sessdata = config.SESSION_ID.replace("POPKID;;;", '');
+  if (!sessdata || sessdata === config.SESSION_ID) {
+    console.log('❌ ERROR: SESSION_ID format is invalid. It should start with POPKID;;;')
+    process.exit(1)
+  }
   const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
   filer.download((err, data) => {
-    if (err) throw err
+    if (err) {
+      console.log('❌ ERROR: Failed to download session file:', err.message)
+      process.exit(1)
+    }
     fs.writeFile(__dirname + '/sessions/creds.json', data, () => {
-      console.log("SESSIO-ID CONNECTED 🙂")
+      console.log("✅ SESSION-ID CONNECTED 🙂")
     })
   })
 }
