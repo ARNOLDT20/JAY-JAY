@@ -109,17 +109,47 @@ cmd({
       }
     };
 
-    // Send menu
-    await conn.sendMessage(
-      from,
-      {
-        image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/pwublt.png' },
+    // Send menu (handle large captions)
+    const sendTextChunks = async (text, opts={}) => {
+      const maxLen = 3900; // keep some buffer
+      if (text.length <= maxLen) {
+        return conn.sendMessage(from, { text }, opts);
+      }
+      // split into chunks without breaking words
+      let start = 0;
+      while (start < text.length) {
+        let end = start + maxLen;
+        if (end < text.length) {
+          // try to break at newline
+          const nl = text.lastIndexOf('\n', end);
+          if (nl > start) end = nl;
+        }
+        const chunk = text.slice(start, end);
+        await conn.sendMessage(from, { text: chunk }, opts);
+        start = end;
+      }
+    };
 
-        caption: menu,
-        contextInfo: imageContextInfo
-      },
-      { quoted: mek }
-    );
+    // first send image + caption if caption is short enough
+    if (menu.length <= 4000) {
+      await conn.sendMessage(
+        from,
+        {
+          image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/pwublt.png' },
+          caption: menu,
+          contextInfo: imageContextInfo
+        },
+        { quoted: mek }
+      );
+    } else {
+      // send header image separately
+      await conn.sendMessage(
+        from,
+        { image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/pwublt.png' } },
+        { quoted: mek }
+      );
+      await sendTextChunks(menu, { quoted: mek });
+    }
 
     // Optional audio
     if (config.MENU_AUDIO_URL) {

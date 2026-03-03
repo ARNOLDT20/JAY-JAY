@@ -511,7 +511,7 @@ async function connectToWA() {
                 }
             }
         }
-        
+
         // Handle event-based plugins
         Promise.all(events.commands.map(async (command) => {
             try {
