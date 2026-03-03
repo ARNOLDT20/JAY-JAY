@@ -26,7 +26,7 @@ EXPOSE 2050
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD curl -f http://localhost:2050/ || exit 1
+    CMD curl -f http://localhost:2050/ || exit 1
 
 # Start the bot with error handling
 CMD ["node", "start.js"]
