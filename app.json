@@ -1,10 +1,10 @@
 {
-  "name": "NYX",
-  "description": "NYX WhatsApp bot",
-  "repository": "https://github.com/blazetech-glitch/NYX",
-  "logo": "https://files.catbox.moe/rw0yfd.png",
+  "name": "jay-jay-md",
+  "description": "JAY-JAY MD WhatsApp bot",
+  "repository": "https://github.com/ARNOLDT20/JAY-JAY",
+  "logo": "https://files.catbox.moe/n1ap5e.jpg",
   "keywords": [
-    "NYX"
+    "JAY-JAY"
   ],
   "success_url": "/",
   "stack": "container",
@@ -17,7 +17,7 @@
     "STICKER_NAME": {
       "description": "type your sticker pack name.",
       "required": true,
-      "value": "NYX-XTR"
+      "value": "JAY-JAY"
     },
     "PREFIX": {
       "description": "paste your bot prefix note! Don't apply null prefix.",
@@ -67,22 +67,22 @@
     "AUTO_STATUS_MSG": {
       "description": "Type custom message on status reply",
       "required": true,
-      "value": ".𝗦𝗘𝗘𝗡 𝗬𝗢𝗨𝗥 𝗦𝗧𝗔𝗧𝗨𝗦 𝗕𝗬 𝗡𝗬𝗫 𝗫𝗧𝗥🔄"
+      "value": ".𝗦𝗘𝗘𝗡 𝗬𝗢𝗨𝗥 𝗦𝗧𝗔𝗧𝗨𝗦 𝗕𝗬 �𝗔𝗬-𝗝𝗔𝗬 𝗠𝗗🔄"
     },
     "OWNER_NAME": {
       "description": "Type Bot Owner Name.",
       "required": false,
-      "value": "BLAZE TEAM"
+      "value": "JAY JAY"
     },
     "OWNER_NUMBER": {
       "description": "put the owner number for bot.",
       "required": false,
-      "value": "255627417402"
+      "value": "263771166781"
     },
     "BOT_NAME": {
       "description": "Type here the bot name.",
       "required": true,
-      "value": "NYX MD"
+      "value": "JAY-JAY MD"
     },
     "ANTI_LINK": {
       "description": "Make it true if you want bot auto remove group link.",
@@ -107,12 +107,12 @@
     "MENU_IMAGE_URL": {
       "description": "add url for mention reply and menu if want.",
       "required": true,
-      "value": "https://files.catbox.moe/rw0yfd.png"
+      "value": "https://files.catbox.moe/n1ap5e.jpg"
     },
     "DESCRIPTION": {
       "description": "add caption for menu and other",
       "required": true,
-      "value": "*© NYX MD bot*"
+      "value": "*© JAY-JAY MD bot*"
     },
     "DELETE_LINKS": {
       "description": "remove links from group automatically without removing member",
