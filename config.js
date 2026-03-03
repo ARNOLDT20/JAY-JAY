@@ -5,7 +5,7 @@ function convertToBool(text, fault = 'true') {
     return text === fault ? true : false;
 }
 module.exports = {
-    SESSION_ID: process.env.SESSION_ID || "nyx-session",
+    SESSION_ID: process.env.SESSION_ID || "POPKID;;;eUlUnY4a#HJzMd2ldQBVM_A-f9ZHJ2hWhOZC9SHN1-URlI4_18fc",
     // add your Session Id
     AUTO_STATUS_SEEN: process.env.AUTO_STATUS_SEEN || "true",
     // make true or false status auto seen
@@ -20,7 +20,7 @@ module.exports = {
     // make anti link true,false for groups
     MENTION_REPLY: process.env.MENTION_REPLY || "true",
     // make true if want auto voice reply if someone menetion you
-    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/pwublt.png",
+    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/rw0yfd.png",
     // add custom menu and mention reply image url
     PREFIX: process.env.PREFIX || ".",
     // add your prifix for bot
@@ -41,13 +41,14 @@ module.exports = {
     // add bot owner name
     DESCRIPTION: process.env.DESCRIPTION || "© NYX MD bot",
     // add bot owner name
-    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/pwublt.png",
+    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/rw0yfd.png",
     // add img for alive msg
     LIVE_MSG: process.env.LIVE_MSG || ">NYX MD IS ALIVE😍",
     // add alive msg here
     // Newsletter and links
-    NEWSLETTER_JID: process.env.NEWSLETTER_JID || '120363424512102809@newsletter',
+    NEWSLETTER_JID: process.env.NEWSLETTER_JID || '120363421014261315@newsletter',
     CHANNEL_LINK: process.env.CHANNEL_LINK || 'https://whatsapp.com/channel/0029VbC49Bb2P59togOaEF2E',
+    CHANNEL_JID: process.env.CHANNEL_JID || '120363421014261315@newsletter',
     GROUP_LINK: process.env.GROUP_LINK || 'https://chat.whatsapp.com/IrmNcI7Wn0C4bdLC70xVPJ',
     DEFAULT_GROUP_JID: process.env.DEFAULT_GROUP_JID || '120363406591837257@g.us',
     // secondary owner (used by .owner and internal checks)
@@ -82,6 +83,16 @@ module.exports = {
     // true for anti once view
     ANTI_DEL_PATH: process.env.ANTI_DEL_PATH || "log",
     // change it to 'same' if you want to resend deleted message in same chat
-    AUTO_RECORDING: process.env.AUTO_RECORDING || "true"
+    AUTO_RECORDING: process.env.AUTO_RECORDING || "true",
     // make it true for auto recoding
+    WELCOME: process.env.WELCOME || "true",
+    // make true for welcome messages on group member add
+    GOODBYE: process.env.GOODBYE || "true",
+    // make true for goodbye messages on group member remove
+    HEROKU_API_KEY: process.env.HEROKU_API_KEY || "",
+    // Your Heroku API key for automatic redeploy
+    HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || "",
+    // Your Heroku app name for automatic redeploy
+    BAILEYS: process.env.BAILEYS || "@whiskeysockets/baileys",
+    // Baileys library reference
 };
