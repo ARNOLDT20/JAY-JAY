@@ -1,16 +1,16 @@
 {
-  "name": "nyx-md",
+  "name": "jay-jay-md",
   "version": "3.0.0",
-  "description": "NYX WhatsApp Bot",
+  "description": "JAY-JAY MD WhatsApp Bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "stop": "pm2 stop NYX-XTR",
-    "restart": "pm2 restart NYX-XTR"
+    "stop": "pm2 stop JAY-JAY",
+    "restart": "pm2 restart JAY-JAY"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/blazetech-glitch/NYX"
+    "url": "https://github.com/ARNOLDT20/JAY-JAY"
   },
   "engines": {
     "node": ">=20"

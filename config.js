@@ -5,7 +5,7 @@ function convertToBool(text, fault = 'true') {
     return text === fault ? true : false;
 }
 module.exports = {
-    SESSION_ID: process.env.SESSION_ID || "POPKID;;;eUlUnY4a#HJzMd2ldQBVM_A-f9ZHJ2hWhOZC9SHN1-URlI4_18fc",
+    SESSION_ID: process.env.SESSION_ID || "BLAZE~eUlUnY4a#HJzMd2ldQBVM_A-f9ZHJ2hWhOZC9SHN1-URlI4_18fc",
     // add your Session Id
     AUTO_STATUS_SEEN: process.env.AUTO_STATUS_SEEN || "true",
     // make true or false status auto seen
@@ -14,19 +14,19 @@ module.exports = {
     AUTO_BIO: process.env.AUTO_BIO || "true", // ture to get auto bio
     AUTO_STATUS_REACT: process.env.AUTO_STATUS_REACT || "true",
     // make true if you want auto reply on status
-    AUTO_STATUS_MSG: process.env.AUTO_STATUS_MSG || ".𝗦𝗘𝗘𝗡 𝗬𝗢𝗨𝗥 𝗦𝗧𝗔𝗧𝗨𝗦 𝗕𝗬 𝗣𝗢𝗣𝗞𝗜𝗗 𝗫𝗧𝗥🔄",
+    AUTO_STATUS_MSG: process.env.AUTO_STATUS_MSG || ".𝗦𝗘𝗘𝗡 𝗬𝗢𝗨𝗥 𝗦𝗧𝗔𝗧𝗨𝗦 𝗕𝗬 �𝗔𝗬-𝗝𝗔𝗬 𝗠𝗗🔄",
     // set the auto reply massage on status reply
     ANTI_LINK: process.env.ANTI_LINK || "true",
     // make anti link true,false for groups
     MENTION_REPLY: process.env.MENTION_REPLY || "true",
     // make true if want auto voice reply if someone menetion you
-    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/rw0yfd.png",
+    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/pwublt.png",
     // add custom menu and mention reply image url
     PREFIX: process.env.PREFIX || ".",
     // add your prifix for bot
-    BOT_NAME: process.env.BOT_NAME || "NYX MD",
+    BOT_NAME: process.env.BOT_NAME || "JAY-JAY MD",
     // add bot namw here for menu
-    STICKER_NAME: process.env.STICKER_NAME || "NYX-MD",
+    STICKER_NAME: process.env.STICKER_NAME || "JAY-JAY",
     // type sticker pack name
     CUSTOM_REACT: process.env.CUSTOM_REACT || "false",
     // make this true for custum emoji react
@@ -34,16 +34,16 @@ module.exports = {
     // chose custom react emojis by yourself
     DELETE_LINKS: process.env.DELETE_LINKS || "false",
     // automatic delete links witho remove member
-    OWNER_NUMBER: process.env.OWNER_NUMBER || "255627417402",
+    OWNER_NUMBER: process.env.OWNER_NUMBER || "263771166781",
     // add your bot owner number
     // add your bot owner number
-    OWNER_NAME: process.env.OWNER_NAME || "BLAZE TEAM",
+    OWNER_NAME: process.env.OWNER_NAME || "JAY JAY",
     // add bot owner name
-    DESCRIPTION: process.env.DESCRIPTION || "© NYX MD bot",
+    DESCRIPTION: process.env.DESCRIPTION || "© JAY-JAY MD bot",
     // add bot owner name
-    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/rw0yfd.png",
+    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/pwublt.png",
     // add img for alive msg
-    LIVE_MSG: process.env.LIVE_MSG || ">NYX MD IS ALIVE😍",
+    LIVE_MSG: process.env.LIVE_MSG || ">JAY-JAY MD IS ALIVE😍",
     // add alive msg here
     // Newsletter and links
     NEWSLETTER_JID: process.env.NEWSLETTER_JID || '120363421014261315@newsletter',
