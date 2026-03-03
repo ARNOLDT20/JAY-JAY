@@ -54,7 +54,7 @@ cmd({
                 from,
                 {
                     image: {
-                        url: movie.poster && movie.poster !== 'N/A' ? movie.poster : 'https://files.catbox.moe/rw0yfd.png'
+                        url: movie.poster && movie.poster !== 'N/A' ? movie.poster : 'https://files.catbox.moe/pwublt.png'
                     },
                     caption: dec,
                     contextInfo: {

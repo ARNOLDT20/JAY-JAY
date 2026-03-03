@@ -223,7 +223,7 @@ async function connectToWA() {
 
 > *Report any error to the dev*
                                   `;
-            await safeSendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/rw0yfd.png` }, caption: up });
+            await safeSendMessage(conn.user.id, { image: { url: `https://files.catbox.moe/pwublt.png` }, caption: up });
 
             // ALWAYS_ONLINE: send periodic presence updates to keep WA connection active
             try {
