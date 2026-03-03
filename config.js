@@ -6,8 +6,8 @@ function convertToBool(text, fault = 'true') {
 }
 
 module.exports = {
-    SESSION_ID: process.env.SESSION_ID || "BLAZE~eUlUnY4a#HJzMd2ldQBVM_A-f9ZHJ2hWhOZC9SHN1-URlI4_18fc",
-    // add your Session Id
+    SESSION_ID: process.env.SESSION_ID || "",
+    // add your Session Id (leave empty to generate on first run)
     AUTO_STATUS_SEEN: process.env.AUTO_STATUS_SEEN || "true",
     // make true or false status auto seen
     AUTO_STATUS_REPLY: process.env.AUTO_STATUS_REPLY || "false",
@@ -35,8 +35,8 @@ module.exports = {
     // chose custom react emojis by yourself
     DELETE_LINKS: process.env.DELETE_LINKS || "false",
     // automatic delete links witho remove member
-    OWNER_NUMBER: process.env.OWNER_NUMBER || "263771166781",
-    // add your bot owner number
+    OWNER_NUMBER: process.env.OWNER_NUMBER || "",
+    // add your bot owner number (required for connection)
     OWNER_NAME: process.env.OWNER_NAME || "JAY JAY",
     // add bot owner name
     DESCRIPTION: process.env.DESCRIPTION || "© JAY-JAY MD bot",
@@ -52,7 +52,7 @@ module.exports = {
     GROUP_LINK: process.env.GROUP_LINK || 'https://chat.whatsapp.com/IrmNcI7Wn0C4bdLC70xVPJ',
     DEFAULT_GROUP_JID: process.env.DEFAULT_GROUP_JID || '120363406591837257@g.us',
     // secondary owner (used by .owner and internal checks)
-    OWNER_NUMBER2: process.env.OWNER_NUMBER2 || "263771166781",
+    OWNER_NUMBER2: process.env.OWNER_NUMBER2 || "",
     READ_MESSAGE: process.env.READ_MESSAGE || "false",
     // Turn true or false for automatic read msgs
     AUTO_REACT: process.env.AUTO_REACT || "false",
@@ -77,8 +77,8 @@ module.exports = {
     // true for automatic show typing
     READ_CMD: process.env.READ_CMD || "false",
     // true if want mark commands as read
-    DEV: process.env.DEV || "255627417402",
-    //replace with your whatsapp number
+    DEV: process.env.DEV || "",
+    //replace with your whatsapp number (optional)
     ANTI_VV: process.env.ANTI_VV || "true",
     // true for anti once view
     ANTI_DEL_PATH: process.env.ANTI_DEL_PATH || "log",
