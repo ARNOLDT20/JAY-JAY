@@ -1,10 +1,10 @@
 {
-  "name": "jay-jay-md",
+  "name": "JAY-JAY MD",
   "description": "JAY-JAY MD WhatsApp bot",
   "repository": "https://github.com/ARNOLDT20/JAY-JAY",
-  "logo": "https://files.catbox.moe/n1ap5e.jpg",
+  "logo": "https://files.catbox.moe/pwublt.png",
   "keywords": [
-    "JAY-JAY"
+    "JAY-JAY MD"
   ],
   "success_url": "/",
   "stack": "container",
@@ -17,7 +17,7 @@
     "STICKER_NAME": {
       "description": "type your sticker pack name.",
       "required": true,
-      "value": "JAY-JAY"
+      "value": "JAY-JAY-XTR"
     },
     "PREFIX": {
       "description": "paste your bot prefix note! Don't apply null prefix.",
@@ -67,7 +67,7 @@
     "AUTO_STATUS_MSG": {
       "description": "Type custom message on status reply",
       "required": true,
-      "value": ".𝗦𝗘𝗘𝗡 𝗬𝗢𝗨𝗥 𝗦𝗧𝗔𝗧𝗨𝗦 𝗕𝗬 �𝗔𝗬-𝗝𝗔𝗬 𝗠𝗗🔄"
+      "value": ".𝗦𝗘𝗘𝗡 𝗬𝗢𝗨𝗥 𝗦𝗧𝗔𝗧𝗨𝗦 𝗕𝗬 �𝗔𝗬-𝗝𝗔𝗬 𝗫𝗧𝗥🔄"
     },
     "OWNER_NAME": {
       "description": "Type Bot Owner Name.",
@@ -107,7 +107,7 @@
     "MENU_IMAGE_URL": {
       "description": "add url for mention reply and menu if want.",
       "required": true,
-      "value": "https://files.catbox.moe/n1ap5e.jpg"
+      "value": "https://files.catbox.moe/pwublt.png"
     },
     "DESCRIPTION": {
       "description": "add caption for menu and other",
