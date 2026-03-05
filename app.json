@@ -2,7 +2,7 @@
   "name": "JAY-JAY MD",
   "description": "JAY-JAY MD WhatsApp bot",
   "repository": "https://github.com/ARNOLDT20/JAY-JAY",
-  "logo": "https://files.catbox.moe/pwublt.png",
+  "logo": "https://files.catbox.moe/eo61se.jpg",
   "keywords": [
     "JAY-JAY MD"
   ],
@@ -107,7 +107,7 @@
     "MENU_IMAGE_URL": {
       "description": "add url for mention reply and menu if want.",
       "required": true,
-      "value": "https://files.catbox.moe/pwublt.png"
+      "value": "https://files.catbox.moe/eo61se.jpg"
     },
     "DESCRIPTION": {
       "description": "add caption for menu and other",

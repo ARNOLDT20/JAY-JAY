@@ -42,11 +42,23 @@ cmd({
       console.error('Failed to read assets/sudo.json:', e);
     }
 
-    // Fallback to config values if sudo.json is empty
+    // Always ensure config OWNER_NUMBER is included
+    const ownerNum = `${config.OWNER_NUMBER}@s.whatsapp.net`;
+    if (!contactsList.includes(ownerNum)) {
+      contactsList.unshift(ownerNum);
+    }
+
+    // Add OWNER_NUMBER2 if it exists and is different
+    if (config.OWNER_NUMBER2 && config.OWNER_NUMBER2 !== config.OWNER_NUMBER) {
+      const ownerNum2 = `${config.OWNER_NUMBER2}@s.whatsapp.net`;
+      if (!contactsList.includes(ownerNum2)) {
+        contactsList.push(ownerNum2);
+      }
+    }
+
+    // Fallback if contactsList is still empty
     if (!contactsList || contactsList.length === 0) {
-      const n1 = config.OWNER_NUMBER;
-      const n2 = config.OWNER_NUMBER2 || config.OWNER_NUMBER;
-      contactsList = [`${n1}@s.whatsapp.net`, `${n2}@s.whatsapp.net`];
+      contactsList = [ownerNum];
     }
 
     const displayName = config.OWNER_NAME || '👑 Bot Owner';

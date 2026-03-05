@@ -123,7 +123,7 @@ cmd({
     await conn.sendMessage(
       from,
       {
-        image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/n1ap5e.jpg' },
+        image: { url: config.MENU_IMAGE_URL || 'https://files.catbox.moe/eo61se.jpg' },
         caption: menu,
         contextInfo: imageContextInfo
       },

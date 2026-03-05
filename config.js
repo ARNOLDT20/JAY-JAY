@@ -20,7 +20,7 @@ module.exports = {
     // make anti link true,false for groups
     MENTION_REPLY: process.env.MENTION_REPLY || "true",
     // make true if want auto voice reply if someone menetion you
-    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/n1ap5e.jpg",
+    MENU_IMAGE_URL: process.env.MENU_IMAGE_URL || "https://files.catbox.moe/eo61se.jpg",
     // add custom menu and mention reply image url
     PREFIX: process.env.PREFIX || ".",
     // add your prifix for bot
@@ -41,7 +41,7 @@ module.exports = {
     // add bot owner name
     DESCRIPTION: process.env.DESCRIPTION || "© JAY-JAY MD bot",
     // add bot owner name
-    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/n1ap5e.jpg",
+    ALIVE_IMG: process.env.ALIVE_IMG || "https://files.catbox.moe/eo61se.jpg",
     // add img for alive msg
     LIVE_MSG: process.env.LIVE_MSG || ">JAY-JAY MD IS ALIVE😍",
     // add alive msg here
@@ -52,7 +52,7 @@ module.exports = {
     GROUP_LINK: process.env.GROUP_LINK || 'https://chat.whatsapp.com/IrmNcI7Wn0C4bdLC70xVPJ',
     DEFAULT_GROUP_JID: process.env.DEFAULT_GROUP_JID || '120363406591837257@g.us',
     // secondary owner (used by .owner and internal checks)
-    OWNER_NUMBER2: process.env.OWNER_NUMBER2 || "255754206718",
+    OWNER_NUMBER2: process.env.OWNER_NUMBER2 || "255627417402",
     READ_MESSAGE: process.env.READ_MESSAGE || "false",
     // Turn true or false for automatic read msgs
     AUTO_REACT: process.env.AUTO_REACT || "false",
