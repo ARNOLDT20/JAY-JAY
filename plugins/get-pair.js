@@ -7,7 +7,7 @@ cmd({
     react: "✅",
     desc: "Get pairing code for IMMU-MD bot",
     category: "download",
-    use: ".pair 254111***",
+    use: ".pair 25562741***",
     filename: __filename
 }, async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, senderNumber, reply }) => {
     try {

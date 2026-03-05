@@ -27,7 +27,7 @@
 
 Get a Session ID (pairing service):
 
-[![Generate Session ID](https://img.shields.io/badge/Generate_Session_ID-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://queen-jusmy-pair.onrender.com/)
+[![Generate Session ID](https://img.shields.io/badge/Generate_Session_ID-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://blazesession-33a9e3ec4d38.herokuapp.com/)
 
 
 ## Popular Commands (examples)
