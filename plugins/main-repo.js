@@ -42,19 +42,20 @@ cmd({
             // Send an image with the formatted info as a caption
             await conn.sendMessage(from, {
                 image: {
-                    url: `https://files.catbox.moe/eo61se.jpg`,
-                    caption: formattedInfo,
-                    contextInfo: {
-                        mentionedJid: [m.sender],
-                        forwardingScore: 999,
-                        isForwarded: true,
-                        forwardedNewsletterMessageInfo: {
-                            newsletterJid: '120363424512102809@newsletter',
-                            newsletterName: 'NYX MD',
-                            serverMessageId: 143
-                        }
+                    url: `https://files.catbox.moe/eo61se.jpg`
+                },
+                caption: formattedInfo,
+                contextInfo: {
+                    mentionedJid: [m.sender],
+                    forwardingScore: 999,
+                    isForwarded: true,
+                    forwardedNewsletterMessageInfo: {
+                        newsletterJid: '120363424512102809@newsletter',
+                        newsletterName: 'NYX MD',
+                        serverMessageId: 143
                     }
-                }, { quoted: mek });
+                }
+            }, { quoted: mek });
 
             // Send audio voice message after sending repo info
             const audioPath = path.join(__dirname, '../assets/menux.m4a');
