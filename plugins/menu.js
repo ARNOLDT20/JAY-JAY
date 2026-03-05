@@ -5,7 +5,7 @@ const { runtime } = require('../lib/functions');
 const os = require('os');
 const { getPrefix } = require('../lib/prefix');
 
-// Fonction pour styliser les majuscules comme ʜɪ
+// Stylized letters
 function toUpperStylized(str) {
   const stylized = {
     A: 'ᴀ', B: 'ʙ', C: 'ᴄ', D: 'ᴅ', E: 'ᴇ', F: 'ғ', G: 'ɢ', H: 'ʜ',
@@ -16,10 +16,10 @@ function toUpperStylized(str) {
   return str.split('').map(c => stylized[c.toUpperCase()] || c).join('');
 }
 
-// Normalisation des catégories
+// normalize categories
 const normalize = (str) => str.toLowerCase().replace(/\s+menu$/, '').trim();
 
-// Emojis par catégorie normalisée
+// emoji map
 const emojiByCategory = {
   ai: '🤖', anime: '🍥', audio: '🎧', bible: '📖',
   download: '⬇️', downloader: '📥', fun: '🎮', game: '🕹️',
@@ -40,9 +40,12 @@ cmd({
   react: '👌',
   filename: __filename
 }, async (conn, mek, m, { from, sender, reply }) => {
+
   try {
+
     const prefix = getPrefix();
     const timezone = config.TIMEZONE || 'Africa/Nairobi';
+
     const time = moment().tz(timezone).format('HH:mm:ss');
     const date = moment().tz(timezone).format('dddd, DD MMMM YYYY');
 
@@ -54,25 +57,23 @@ cmd({
       return `${h}h ${m}m ${s}s`;
     };
 
-    // 🌟 BEAUTIFUL HEADER WITH COLORS
-    let menu = `╔════════════════════════════════╗
-║        ✨ *JAY-JAY MD* ✨       ║
-║    🤖 Command Menu v3.0.0 🤖   ║
-╚════════════════════════════════╝
+    let menu = `
+✨ *JAY-JAY MD COMMAND MENU*
 
-╭─────────────────────────────────╮
-│ 👤 User: @${sender.split("@")[0]}
-│ ⏱️  Runtime: ${uptime()}
-│ ⚙️  Mode: ${config.MODE.toUpperCase()}
-│ 🔑 Prefix: 「 ${config.PREFIX} 」
-│ 👑 Owner: ${config.OWNER_NAME}
-│ 🧩 Plugins: ${commands.length}
-│ 🛠️  Developer: BLAZE TECH
-│ 📅 ${time} • ${date}
-╰─────────────────────────────────╯`;
+👤 User: @${sender.split("@")[0]}
+⏱ Runtime: ${uptime()}
+⚙ Mode: ${config.MODE.toUpperCase()}
+🔑 Prefix: ${config.PREFIX}
+👑 Owner: ${config.OWNER_NAME}
+📦 Commands: ${commands.length}
 
-    // Group commands by category
+🕒 ${time}
+📅 ${date}
+`;
+
+    // group commands
     const categories = {};
+
     for (const cmd of commands) {
       if (cmd.category && !cmd.dontAdd && cmd.pattern) {
         const normalizedCategory = normalize(cmd.category);
@@ -81,35 +82,44 @@ cmd({
       }
     }
 
-    // 🌈 COLORFUL CATEGORY STYLE WITH BUTTONS
+    // category menu
     for (const cat of Object.keys(categories).sort()) {
+
       const emoji = emojiByCategory[cat] || '✨';
-      menu += `\n\n╭─────────────────────────────────╮
-│ ${emoji} *${toUpperStylized(cat).toUpperCase()} MENU*
-├─────────────────────────────────┤`;
-      for (const cmd of categories[cat].sort()) {
-        menu += `\n│ ▸ ${prefix}${cmd}`;
+
+      menu += `\n\n${emoji} *${toUpperStylized(cat).toUpperCase()}*\n`;
+
+      for (const command of categories[cat].sort()) {
+        menu += `▸ ${prefix}${command}\n`;
       }
-      menu += `\n╰─────────────────────────────────╯`;
+
     }
 
-    menu += `\n\n╔════════════════════════════════╗
-║   🌟 ${config.DESCRIPTION || toUpperStylized('Explore the power of JAY-JAY MD')} 🌟   ║
-╚════════════════════════════════╝\n\n*📱 Need help?*\n🔗 Group: ${config.GROUP_LINK ? '[Join](' + config.GROUP_LINK + ')' : 'Not Set'}\n📢 Channel: ${config.CHANNEL_LINK ? '[Follow](' + config.CHANNEL_LINK + ')' : 'Not Set'}\n\n*Made with ❤️ by BLAZE TECH* | *v3.0.0*`;
+    menu += `
 
-    // Context info
+━━━━━━━━━━━━━━
+🌟 ${config.DESCRIPTION || 'Explore the power of JAY-JAY MD'}
+━━━━━━━━━━━━━━
+
+📢 Channel: ${config.CHANNEL_LINK || 'Not Set'}
+👥 Group: ${config.GROUP_LINK || 'Not Set'}
+
+❤️ *BLAZE TECH* | v3.0.0
+`;
+
+    // context
     const imageContextInfo = {
       mentionedJid: [sender],
       forwardingScore: 999,
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
         newsletterJid: config.NEWSLETTER_JID || '120363424512102809@newsletter',
-        newsletterName: config.OWNER_NAME || toUpperStylized('JAY-JAY MD'),
+        newsletterName: config.OWNER_NAME || 'JAY-JAY MD',
         serverMessageId: 143
       }
     };
 
-    // Send menu
+    // send
     await conn.sendMessage(
       from,
       {
@@ -120,9 +130,11 @@ cmd({
       { quoted: mek }
     );
 
-    // Optional audio
+    // optional audio
     if (config.MENU_AUDIO_URL) {
+
       await new Promise(r => setTimeout(r, 1000));
+
       await conn.sendMessage(
         from,
         {
@@ -133,10 +145,14 @@ cmd({
         },
         { quoted: mek }
       );
+
     }
 
   } catch (e) {
+
     console.error('Menu Error:', e.message);
-    await reply(`❌ ${toUpperStylized('Error')}: Menu failed\n${e.message}`);
+    await reply(`❌ ${toUpperStylized('Error')} : Menu failed\n${e.message}`);
+
   }
+
 });
