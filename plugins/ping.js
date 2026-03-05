@@ -15,7 +15,7 @@ cmd({
         try {
             // Record start time when command is triggered
             const start = Date.now();
-            
+
             // Send initial ping message
             const loading = await conn.sendMessage(from, { text: '*⚡ Pinging...*' });
 
@@ -35,7 +35,7 @@ cmd({
             const cores = os.cpus().length;
 
             const emoji = ['🚀', '🌟', '💫', '🔥'][Math.floor(Math.random() * 4)];
-            
+
             const responseMsg = `⚡ *PONG!* ${emoji}
 
 ╭─ *RESPONSE TIME* ⏱️
