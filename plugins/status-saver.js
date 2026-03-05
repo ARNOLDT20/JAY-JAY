@@ -17,8 +17,8 @@ cmd({
       }, { quoted: message });
     }
 
-    const buffer = await match.quoted.download();
-    const mtype = match.quoted.mtype;
+    const buffer = await quotedMsg.download();
+    const mtype = quotedMsg.mtype;
     const options = { quoted: message };
 
     let messageContent = {};
@@ -26,22 +26,22 @@ cmd({
       case "imageMessage":
         messageContent = {
           image: buffer,
-          caption: match.quoted.text || '',
-          mimetype: match.quoted.mimetype || "image/jpeg"
+          caption: quotedMsg.text || '',
+          mimetype: quotedMsg.mimetype || "image/jpeg"
         };
         break;
       case "videoMessage":
         messageContent = {
           video: buffer,
-          caption: match.quoted.text || '',
-          mimetype: match.quoted.mimetype || "video/mp4"
+          caption: quotedMsg.text || '',
+          mimetype: quotedMsg.mimetype || "video/mp4"
         };
         break;
       case "audioMessage":
         messageContent = {
           audio: buffer,
           mimetype: "audio/mp4",
-          ptt: match.quoted.ptt || false
+          ptt: quotedMsg.ptt || false
         };
         break;
       default:
