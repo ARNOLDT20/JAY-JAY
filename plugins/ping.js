@@ -16,8 +16,11 @@ cmd({
             // Record start time when command is triggered
             const start = Date.now();
 
-            // Send initial ping message
-            const loading = await conn.sendMessage(from, { text: '*⚡ Pinging...*' });
+            // Determine the message to quote (either the replied message or the new loading message)
+            const quotedMsg = quoted && quoted.key ? quoted : null;
+
+            // Send initial ping message (quote original if user replied)
+            const loading = await conn.sendMessage(from, { text: '*⚡ Pinging...*' }, quotedMsg ? { quoted: quotedMsg } : {});
 
             // Record time after message is sent
             const end = Date.now();

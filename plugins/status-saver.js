@@ -9,7 +9,9 @@ cmd({
   filename: __filename
 }, async (client, message, match, { from }) => {
   try {
-    if (!match.quoted) {
+    // determine quoted message reliably (some versions put it under message.msg.contextInfo)
+    const quotedMsg = match.quoted || message.quoted || message.msg?.contextInfo?.quotedMessage;
+    if (!quotedMsg) {
       return await client.sendMessage(from, {
         text: "*🍁 Please reply to a message!*"
       }, { quoted: message });

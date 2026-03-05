@@ -104,7 +104,7 @@ cmd({
 📢 Channel: ${config.CHANNEL_LINK || 'Not Set'}
 👥 Group: ${config.GROUP_LINK || 'Not Set'}
 
-❤️ *BLAZE TECH* | v3.0.0
+❤️ *JAY-JAY TECH* | v3.0.0
 `;
 
     // context
