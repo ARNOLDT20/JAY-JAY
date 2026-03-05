@@ -17,7 +17,7 @@ cmd({
       }, { quoted: message });
     }
 
-    const buffer = await quotedMsg.download();
+    const buffer = await client.downloadMediaMessage(quotedMsg);
     const mtype = quotedMsg.mtype;
     const options = { quoted: message };
 
