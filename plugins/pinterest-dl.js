@@ -32,14 +32,14 @@ cmd({
         const title = response.data.result.title || 'No title available';
         const videoUrl = media.find(item => item.type.includes('720p'))?.download_url || media[0].download_url;
 
-        const desc = `*┏────〘 NYX 〙───⊷*
+        const desc = `*┏────〘 JAY JAY 〙───⊷*
     *┃* *PINS DOWNLOADER*
     *┗──────────────⊷*
-    *┏────〘 NYX 〙───⊷*
+    *┏────〘 JAY JAY 〙───⊷*
     *┃* *Title* - ${title}
     *┃* *Media Type* - ${media[0].type}
     *┗──────────────⊷*
-    > powered by NYX`;
+    > powered by JAY JAY`;
 
         // Send video or image
         if (videoUrl) {

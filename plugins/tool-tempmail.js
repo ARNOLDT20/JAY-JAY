@@ -55,8 +55,8 @@ _Email will expire after 24 hours_
                         forwardingScore: 999,
                         isForwarded: true,
                         forwardedNewsletterMessageInfo: {
-                            newsletterJid: '120363424512102809@newsletter',
-                            newsletterName: 'NYX MD',
+                            newsletterJid: '120363424563352256@newsletter',
+                            newsletterName: 'JAY JAY TECH',
                             serverMessageId: 101
                         }
                     }

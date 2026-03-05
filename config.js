@@ -46,11 +46,11 @@ module.exports = {
     LIVE_MSG: process.env.LIVE_MSG || ">JAY-JAY MD IS ALIVE😍",
     // add alive msg here
     // Newsletter and links
-    NEWSLETTER_JID: process.env.NEWSLETTER_JID || '120363421014261315@newsletter',
+    NEWSLETTER_JID: process.env.NEWSLETTER_JID || '120363424563352256@newsletter',
     CHANNEL_LINK: process.env.CHANNEL_LINK || 'https://whatsapp.com/channel/0029VbC49Bb2P59togOaEF2E',
-    CHANNEL_JID: process.env.CHANNEL_JID || '120363421014261315@newsletter',
-    GROUP_LINK: process.env.GROUP_LINK || 'https://chat.whatsapp.com/IrmNcI7Wn0C4bdLC70xVPJ',
-    DEFAULT_GROUP_JID: process.env.DEFAULT_GROUP_JID || '120363406591837257@g.us',
+    CHANNEL_JID: process.env.CHANNEL_JID || '120363424563352256@newsletter',
+    GROUP_LINK: process.env.GROUP_LINK || 'https://chat.whatsapp.com/FbxznJeFa7NF0jMzxfhELL?mode=gi_t',
+    DEFAULT_GROUP_JID: process.env.DEFAULT_GROUP_JID || '120363429472319244@g.us',
     // secondary owner (used by .owner and internal checks)
     OWNER_NUMBER2: process.env.OWNER_NUMBER2 || "255627417402",
     READ_MESSAGE: process.env.READ_MESSAGE || "false",

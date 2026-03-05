@@ -33,7 +33,7 @@ cmd({
 ┃◈┃• *📝 Description*: ${data.description.replace(/\n/g, '\n┃◈┃• ')}
 ┃◈└───────────┈⊷
 ╰──────────────┈⊷
-> *NYX*`;
+> *JAY JAY*`;
 
             // Send message with channel image
             await conn.sendMessage(from, {

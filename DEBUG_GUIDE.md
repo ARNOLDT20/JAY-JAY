@@ -1,12 +1,12 @@
-# 🐛 NYX MD - Debugging Guide
+# 🐛 JAY JAY MD - Debugging Guide
 
 ## Issues Found & Fixed
 
 ### 1. ✅ Package Name Issue (FIXED)
-**Problem**: Package name "NYX" contains uppercase letters which violates npm naming conventions
+**Problem**: Package name "JAY JAY" contains uppercase letters which violates npm naming conventions
 - Pattern requirement: `^(?:(?:@(?:[a-z0-9-*~][a-z0-9-*._~]*)?/[a-z0-9-._~])|[a-z0-9-~])[a-z0-9-._~]*$`
 
-**Solution**: Changed to `"name": "nyx-md"` in package.json
+**Solution**: Changed to `"name": "jay-jay-md"` in package.json
 
 ---
 
@@ -146,7 +146,7 @@ const logger = require('pino')({level: 'debug'})
 pm2 logs NYX
 
 # System logs
-tail -f ~/.pm2/logs/NYX-error.log
+tail -f ~/.pm2/logs/JAY-JAY-error.log
 ```
 
 ---
@@ -166,11 +166,11 @@ In WhatsApp chat:
 ## File Structure Check
 
 ```
-NYX/
+JAY-JAY/
 ├── index.js           ✅ Main entry point
 ├── config.js          ✅ Configuration
 ├── command.js         ✅ Command handler
-├── package.json       ✅ (Fixed: name changed to nyx-md)
+├── package.json       ✅ (Fixed: name changed to jay-jay-md)
 ├── .env              ⚠️ Must contain SESSION_ID
 ├── plugins/          ✅ 100+ command files
 ├── lib/              ✅ Utility functions
@@ -194,14 +194,14 @@ npm ls --depth=0 2>&1 | grep -i error
 
 ## Getting Help
 
-1. **Check logs**: `pm2 logs NYX`
+1. **Check logs**: `pm2 logs JAY-JAY`
 2. **Verify environment**: `echo $SESSION_ID`
 3. **Test connection**: `.owner` command in WhatsApp
 4. **Restart safely**:
    ```bash
-   pm2 stop NYX
+   pm2 stop JAY-JAY
    npm install
-   pm2 restart NYX
+   pm2 restart JAY-JAY
    ```
 
 ---

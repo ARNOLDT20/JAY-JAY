@@ -49,7 +49,7 @@ cmd({
 
         const message = {
             text: `*🛡️ YOUR SHORTENED URL*\n\n🔗 Original: ${link}\n\n✂️ Shortened: ${shortenedUrl}\n\nTap a button to copy or visit!`,
-            footer: '✨ NYX-XD URL Shortener',
+            footer: '✨ JAY JAY MD URL Shortener',
             buttons: button,
             headerType: 1
         };

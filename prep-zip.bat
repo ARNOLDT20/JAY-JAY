@@ -1,5 +1,5 @@
 @echo off
-REM NYX MD - Size Reduction Script for Zipping
+REM JAY JAY MD - Size Reduction Script for Zipping
 REM This removes files that will bloat your zip file
 
 echo.

@@ -1,6 +1,6 @@
 # JAY-JAY MD - WhatsApp Bot
 <p align="center">
-  <img src="assets/nyx-banner.svg" width="100%" />
+  <img src="assets/jay-jay-banner.svg" width="100%" />
 </p>
 
 <div align="center">

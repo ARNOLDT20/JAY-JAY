@@ -69,7 +69,7 @@ cmd({
         await conn.sendMessage(from, {
             image: { url: `https://image.thum.io/get/fullpage/${url}` },
             caption: "- 🖼️ *Screenshot Generated*\n\n" +
-                "> NYX"
+                "> JAY JAY"
         }, { quoted: mek });
 
     } catch (error) {
@@ -78,4 +78,4 @@ cmd({
     }
 });
 
-// ⿻ ⌜ NYX ⌟⿻⃮͛𖤐
+// ⿻ ⌜ JAY JAY ⌟⿻⃮͛𖤐

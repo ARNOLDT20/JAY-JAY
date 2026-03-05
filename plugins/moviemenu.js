@@ -27,7 +27,7 @@ cmd({
         }
 
         let menuText = `╔═════════════════════════╗
-🎬 *NYX-XD MOVIE MENU* 🎬
+🎬 *JAY JAY MD MOVIE MENU* 🎬
 ╚═════════════════════════╝
 
 👤 User: @${sender.split("@")[0]}

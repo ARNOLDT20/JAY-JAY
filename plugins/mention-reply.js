@@ -35,7 +35,7 @@ cmd({
 ║        👋 *MENTION RECEIVED* 👋        ║
 ╚════════════════════════════════╝
 
-✨ **${config.BOT_NAME || 'NYX MD'}** is here! 
+✨ **${config.BOT_NAME || 'JAY JAY MD'}** is here! 
 
 🎯 I'm listening and ready to help you.
 
@@ -76,14 +76,14 @@ cmd({
         audio: { url: "https://files.catbox.moe/lu3f94.mp3" },
         mimetype: 'audio/mpeg',
         ptt: false,
-        fileName: `${config.BOT_NAME || 'NYX'}-notification.mp3`
+        fileName: `${config.BOT_NAME || 'JAY JAY'}-notification.mp3`
       }, { quoted: m });
 
     } catch (sendError) {
       console.error('Error sending mention reply:', sendError.message);
       // Fallback: send text only
       await conn.sendMessage(m.chat, {
-        text: `👋 *${config.BOT_NAME || 'NYX MD'} is here!*\n\n🎯 I'm listening and ready to help.\nUse *.menu* for commands!`
+        text: `👋 *${config.BOT_NAME || 'JAY JAY MD'} is here!*\n\n🎯 I'm listening and ready to help.\nUse *.menu* for commands!`
       }, { quoted: m });
     }
 

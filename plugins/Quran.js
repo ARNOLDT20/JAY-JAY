@@ -62,8 +62,8 @@ ${translatedTafsirEnglish.text}`;
           forwardingScore: 999,
           isForwarded: true,
           forwardedNewsletterMessageInfo: {
-            newsletterJid: '120363424512102809@newsletter',
-            newsletterName: 'NYX MD',
+            newsletterJid: '120363424563352256@newsletter',
+            newsletterName: 'JAY JAY TECH',
             serverMessageId: 143
           }
         }
@@ -451,8 +451,8 @@ cmd({
             forwardingScore: 999,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
-              newsletterJid: '120363424512102809@newsletter',
-              newsletterName: 'NYX MD',
+              newsletterJid: '120363424563352256@newsletter',
+              newsletterName: 'JAY JAY TECH',
               serverMessageId: 143
             }
           }

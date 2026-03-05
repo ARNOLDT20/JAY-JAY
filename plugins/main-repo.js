@@ -34,7 +34,7 @@ cmd({
 *┃* *👑 Owner:* JAY JAY
 *┃* *⭐ Stars:* ${repoData.stargazers_count}
 *┃* *⑂ Forks:* ${repoData.forks_count}
-*┃* *📝 Description:* ${repoData.description || '*World Best WhatsApp Bot powered by NYX MD*'}
+*┃* *📝 Description:* ${repoData.description || '*World Best WhatsApp Bot powered by JAY JAY TECH*'}
 *┃* *🔗 GitHub Link:* ${repoData.html_url}
 *┗──────────────⊷*
 `.trim();
@@ -50,8 +50,8 @@ cmd({
                     forwardingScore: 999,
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
-                        newsletterJid: '120363424512102809@newsletter',
-                        newsletterName: 'NYX MD',
+                        newsletterJid: '120363424563352256@newsletter',
+                        newsletterName: 'JAY JAY TECH',
                         serverMessageId: 143
                     }
                 }
