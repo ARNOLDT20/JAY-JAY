@@ -34,9 +34,23 @@ cmd({
 
         if (!groupLink) return reply("❌ *Invalid Group Link* 🖇️");
 
-        // Accept the group invite
-        await conn.groupAcceptInvite(groupLink);
-        await conn.sendMessage(from, { text: `✔️ *Successfully Joined*` }, { quoted: mek });
+        try {
+            // Accept the group invite
+            await conn.groupAcceptInvite(groupLink);
+            await conn.sendMessage(from, { text: `✔️ *Successfully Joined*` }, { quoted: mek });
+        } catch (joinError) {
+            const errorMsg = joinError.message || joinError.toString();
+
+            if (errorMsg.includes('bad-request')) {
+                return reply("⚠️ *Bot is already a member of this group or the link is invalid!*");
+            } else if (errorMsg.includes('not-found')) {
+                return reply("❌ *Group not found! The link may be expired.*");
+            } else if (errorMsg.includes('forbidden') || errorMsg.includes('forbidden-request')) {
+                return reply("🚫 *bot is banned from this group or doesn't have permission to join.*");
+            } else {
+                return reply(`❌ *Failed to join group:*\n${errorMsg}`);
+            }
+        }
 
     } catch (e) {
         await conn.sendMessage(from, { react: { text: '❌', key: mek.key } });

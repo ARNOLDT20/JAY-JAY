@@ -13,36 +13,57 @@ cmd({
 },
     async (conn, mek, m, { from, quoted, sender, reply }) => {
         try {
+            // Record start time when command is triggered
             const start = Date.now();
-            const loading = await conn.sendMessage(from, { text: '*Pinging...*' });
+            
+            // Send initial ping message
+            const loading = await conn.sendMessage(from, { text: '*⚡ Pinging...*' });
 
-            // small reaction for flair
-            try { await conn.sendMessage(from, { react: { text: '⚡', key: mek.key } }) } catch (e) { }
-
+            // Record time after message is sent
             const end = Date.now();
-            const latency = end - start; // ms
+            const latency = end - start;
 
+            // Get system info
             const up = runtime(process.uptime());
             const mem = process.memoryUsage();
             const usedMB = (mem.heapUsed / 1024 / 1024).toFixed(2);
             const totalMB = (mem.heapTotal / 1024 / 1024).toFixed(2);
+            const cpuUsage = ((mem.heapUsed / mem.heapTotal) * 100).toFixed(2);
 
-            const platform = `${os.type()} ${os.arch()} (${os.platform()})`;
+            const platform = `${os.type()} ${os.arch()}`;
             const cpus = os.cpus()[0].model;
+            const cores = os.cpus().length;
 
-            const nice = `⚡ *PONG!* ${['🚀', '🌟', '💫', '🔥'][Math.floor(Math.random() * 4)]}\n*Latency:* ${latency} ms\n*Uptime:* ${up}\n*Memory:* ${usedMB} MB / ${totalMB} MB\n*Platform:* ${platform}\n*CPU:* ${cpus}\n*Bot:* ${config.BOT_NAME}\n*Owner:* ${config.OWNER_NAME}\n`;
+            const emoji = ['🚀', '🌟', '💫', '🔥'][Math.floor(Math.random() * 4)];
+            
+            const responseMsg = `⚡ *PONG!* ${emoji}
 
+╭─ *RESPONSE TIME* ⏱️
+│ Latency: ${latency}ms
+│ Status: ${latency < 100 ? '✅ Excellent' : latency < 500 ? '👍 Good' : '⚠️ Slow'}
+├─ *SYSTEM INFO* 💻
+│ Uptime: ${up}
+│ Memory: ${usedMB}/${totalMB} MB (${cpuUsage}%)
+│ Platform: ${platform}
+│ CPU: ${cpus}
+│ Cores: ${cores}
+├─ *BOT INFO* 🤖
+│ Name: ${config.BOT_NAME}
+│ Owner: ${config.OWNER_NAME}
+╰─ JAY-JAY MD Powered 🔥`;
+
+            // Edit the message with actual ping response
             await conn.sendMessage(from, {
                 image: { url: config.MENU_IMAGE_URL },
-                caption: nice,
+                caption: responseMsg,
                 contextInfo: { mentionedJid: [sender] }
             }, { quoted: loading }).catch(() => {
-                // fallback to text only
-                conn.sendMessage(from, { text: nice }, { quoted: loading }).catch(() => { });
+                // Fallback to text only if image fails
+                conn.sendMessage(from, { text: responseMsg }, { quoted: loading }).catch(() => { });
             });
 
         } catch (e) {
             console.error("Error in ping command:", e);
-            reply(`An error occurred: ${e.message}`);
+            reply(`❌ An error occurred: ${e.message}`);
         }
     });
